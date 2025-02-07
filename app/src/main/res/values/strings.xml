@@ -4,4 +4,12 @@
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
     <string name="error">Error</string>
+    <string name="hello">Hello</string>
+    <string name="location">Location</string>
+    <string name="dhaka">Dhaka</string>
+    <string name="weathe_update">Weather Update</string>
+    <string name="date">Today, 12 September</string>
+    <string name="cloudy">Cloudy</string>
+    <string name="wind_string">Wind</string>
+    <string name="hum_string">Hum</string>
 </resources>

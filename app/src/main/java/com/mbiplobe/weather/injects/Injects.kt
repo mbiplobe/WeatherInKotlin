@@ -10,7 +10,7 @@ import com.mbiplobe.weather.ui.dashboard.ViewModelFactory
 object Injects {
     private var weatherDatasource: WeatherDatasource? = null
     private var weatherRepository: WeatherRepsitoryImp? = null
-    var viewModelFactory: ViewModelFactory? = null
+    private var viewModelFactory: ViewModelFactory? = null
 
     private fun createWeatherDataSource(): WeatherDatasource {
         val dataSource = RemoteWeatherDataSource(ApiClient)
