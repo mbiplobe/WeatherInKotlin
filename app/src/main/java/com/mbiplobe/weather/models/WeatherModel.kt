@@ -9,5 +9,7 @@ data class WeatherModel(
     @SerializedName("visibility")val visibility: Int,
     @SerializedName("id")val id: Int,
     @SerializedName("name")val name: String,
-    @SerializedName("cod")val cod: Int
+    @SerializedName("cod")val cod: Int,
+    @SerializedName("weather")val weather: WeatherDescriptionModel?
+
 )
