@@ -1,6 +1,6 @@
 package com.mbiplobe.weather.data
 
-import com.mbiplobe.weather.models.WeatherModel
+import com.mbiplobe.weather.models.entity.WeatherModel
 import okhttp3.OkHttpClient
 import retrofit2.converter.gson.GsonConverterFactory
 import okhttp3.logging.HttpLoggingInterceptor
@@ -17,14 +17,14 @@ object ApiClient {
     private var servicesApiInterface: ServicesApiInterface? = null
 
     fun build(): ServicesApiInterface? {
-        var builder: Retrofit.Builder = Retrofit.Builder()
+        val builder: Retrofit.Builder = Retrofit.Builder()
             .baseUrl(API_BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
 
-        var httpClient: OkHttpClient.Builder = OkHttpClient.Builder()
+        val httpClient: OkHttpClient.Builder = OkHttpClient.Builder()
         httpClient.addInterceptor(interceptor())
 
-        var retrofit: Retrofit = builder.client(httpClient.build()).build()
+        val retrofit: Retrofit = builder.client(httpClient.build()).build()
         servicesApiInterface = retrofit.create(
             ServicesApiInterface::class.java
         )

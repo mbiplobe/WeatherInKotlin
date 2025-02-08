@@ -1,7 +1,7 @@
 package com.mbiplobe.weather.data
 
-import com.mbiplobe.weather.models.WeatherDatasource
-import com.mbiplobe.weather.models.WeatherModel
+import com.mbiplobe.weather.models.listener.WeatherDatasource
+import com.mbiplobe.weather.models.entity.WeatherModel
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

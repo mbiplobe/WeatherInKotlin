@@ -4,8 +4,8 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.mbiplobe.weather.data.OperationCallback
-import com.mbiplobe.weather.models.WeatherModel
-import com.mbiplobe.weather.models.WeatherRepository
+import com.mbiplobe.weather.models.entity.WeatherModel
+import com.mbiplobe.weather.models.repository.WeatherRepository
 
 class DashboardViewModel(private val repository: WeatherRepository) : ViewModel() {
 
@@ -30,7 +30,7 @@ class DashboardViewModel(private val repository: WeatherRepository) : ViewModel(
                     _isEmptyEmptyUpdate.value = true
 
                 } else {
-                    _museums.value = data?:null
+                    _museums.value = data?: null
                 }
             }
 

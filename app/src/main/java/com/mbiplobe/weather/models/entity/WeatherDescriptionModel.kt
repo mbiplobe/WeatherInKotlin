@@ -1,4 +1,4 @@
-package com.mbiplobe.weather.models
+package com.mbiplobe.weather.models.entity
 
 data class WeatherDescriptionModel (
     var main: String? = null,
