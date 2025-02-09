@@ -11,8 +11,8 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import com.mbiplobe.weather.R
+import com.mbiplobe.weather.data.Weather
 import com.mbiplobe.weather.injects.Injects
-import com.mbiplobe.weather.models.entity.WeatherModel
 
 class DashboardFragment : Fragment() {
     private lateinit var cardView: CardView
@@ -26,7 +26,7 @@ class DashboardFragment : Fragment() {
         Injects.providerViewModelFactory()
     }
 
-    private val renderWeather = Observer<WeatherModel> {
+    private val renderWeather = Observer<Weather> {
         error_msg.visibility = View.GONE
         progressBar.visibility = View.GONE
         bindView(it)
@@ -34,9 +34,9 @@ class DashboardFragment : Fragment() {
     }
 
 
-    private fun bindView(weatherModel: WeatherModel) {
-        lat_text.text = weatherModel.base
-        lon_text.text = weatherModel.name
+    private fun bindView(weather: Weather) {
+        lat_text.text = String.format("0.2%",weather.feelsLike)
+        lon_text.text = String.format("0.2%",weather.temp)
     }
 
     private fun setupViewModel() {

@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName
 
 data class SysModel(
     @SerializedName("country") val country: String,
-    @SerializedName("sunrise") val sunrise: Long,
-    @SerializedName("sunset") val sunset: Long
+    @SerializedName("sunrise") val sunrise: Int,
+    @SerializedName("sunset") val sunset: Int
 
 )

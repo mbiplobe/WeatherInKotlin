@@ -10,14 +10,13 @@ class RemoteWeatherDataSource(apiClient: ApiClient) : WeatherDatasource {
     private var call: Call<WeatherModel>? = null
     private val service = apiClient.build()
 
-    override fun retrieveWeather(callback: OperationCallback<WeatherModel>) {
+    override fun retrieveWeather(callback: OperationCallback<Weather>) {
         call = service?.weather(52.52,13.41, "c15646613c5b5b7a89f764b00b96c709")
         call?.enqueue(object : Callback<WeatherModel>{
             override fun onResponse(p0: Call<WeatherModel>, response: Response<WeatherModel>) {
                 response.body()?.let {
                     if (response.isSuccessful) {
-                        val test= response.body()
-                        callback.onSuccess(response.body())
+                        callback.onSuccess(ObjectConverter.WeatherModelToWeather(response.body()!!))
                     } else {
                         callback.onError(response.message())
                     }
