@@ -30,7 +30,7 @@ class DashboardViewModel(private val repository: WeatherRepository) : ViewModel(
                     _isEmptyEmptyUpdate.value = true
 
                 } else {
-                    _museums.value = data?: null
+                    _museums.value = data!!
                 }
             }
 

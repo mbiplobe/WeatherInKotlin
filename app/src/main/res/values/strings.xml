@@ -12,4 +12,5 @@
     <string name="cloudy">Cloudy</string>
     <string name="wind_string">Wind</string>
     <string name="hum_string">Hum</string>
+    <string name="http_request_error">Due to internet connectivity, we can\'t establish connect.</string>
 </resources>
