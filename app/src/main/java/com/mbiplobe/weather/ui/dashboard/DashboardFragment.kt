@@ -22,9 +22,9 @@ class DashboardFragment : Fragment() {
     private lateinit var lon_text: TextView
 
 
-    private val viewModel by viewModels<DashboardViewModel> {
-        Injects.providerViewModelFactory()
-    }
+//    private val viewModel by viewModels<DashboardViewModel> {
+//        Injects.providerViewModelFactory()
+//    }
 
     private val renderWeather = Observer<Weather> {
         error_msg.visibility = View.GONE
@@ -35,16 +35,16 @@ class DashboardFragment : Fragment() {
 
 
     private fun bindView(weather: Weather) {
-        lat_text.text = String.format("0.2%",weather.feelsLike)
-        lon_text.text = String.format("0.2%",weather.temp)
+        lat_text.text ="${weather.feelsLike}"
+        lon_text.text = "${weather.temp}"
     }
 
-    private fun setupViewModel() {
-        viewModel.weather.observe(viewLifecycleOwner, renderWeather)
-        viewModel.isViewLoading.observe(viewLifecycleOwner, isViewLoadingObserver)
-        viewModel.onMessageError.observe(viewLifecycleOwner, onMessageErrorObserver)
-        viewModel.isEmptyList.observe(viewLifecycleOwner, emptyListObserver)
-    }
+//    private fun setupViewModel() {
+//        viewModel.weather.observe(viewLifecycleOwner, renderWeather)
+//        viewModel.isViewLoading.observe(viewLifecycleOwner, isViewLoadingObserver)
+//        viewModel.onMessageError.observe(viewLifecycleOwner, onMessageErrorObserver)
+//        viewModel.isEmptyList.observe(viewLifecycleOwner, emptyListObserver)
+//    }
 
     private val isViewLoadingObserver = Observer<Boolean> {
         val visibility = if (it) View.VISIBLE else View.GONE
@@ -68,7 +68,7 @@ class DashboardFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         val view = inflater.inflate(R.layout.fragment_dashboard, container, false)
-        setupViewModel()
+//        setupViewModel()
         setView(view)
 
         return view
@@ -76,7 +76,7 @@ class DashboardFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
-        viewModel.getWeatherUpdate()
+//        viewModel.getWeatherUpdate()
     }
 
     private fun setView(view: View) {

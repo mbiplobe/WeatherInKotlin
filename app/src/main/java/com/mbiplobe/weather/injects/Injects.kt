@@ -5,7 +5,7 @@ import com.mbiplobe.weather.data.RemoteWeatherDataSource
 import com.mbiplobe.weather.models.listener.WeatherDatasource
 import com.mbiplobe.weather.models.repository.WeatherRepository
 import com.mbiplobe.weather.models.repository.WeatherRepsitoryImp
-import com.mbiplobe.weather.ui.dashboard.ViewModelFactory
+import com.mbiplobe.weather.ui.home.ViewModelFactory
 
 object Injects {
     private var weatherDatasource: WeatherDatasource? = null

@@ -20,6 +20,7 @@ class HomeViewModel(private val repository: WeatherRepository) : ViewModel() {
 
     private val _isEmptyEmptyUpdate = MutableLiveData<Boolean>()
     val isEmptyList: LiveData<Boolean> = _isEmptyEmptyUpdate
+
     fun getWeatherUpdate(){
         _isViewLoading.value = true
         repository.fetchMuseums(object : OperationCallback<Weather> {

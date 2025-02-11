@@ -1,213 +1,225 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/home_background"
-    android:padding="@dimen/activity_horizontal_margin"
     tools:context=".ui.home.HomeFragment">
 
-    <ProgressBar
-        android:id="@+id/progressbar_indicator"
-        android:visibility="visible"
-        android:layout_centerInParent="true"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-    <TextView
-        android:visibility="gone"
-        android:textColor="@color/white"
-        android:textStyle="bold"
-        android:textSize="20sp"
-        android:layout_centerInParent="true"
-        android:text="@string/http_request_error"
-        android:id="@+id/error_msg_tv"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-
-
-  <LinearLayout
-      android:visibility="gone"
-      android:id="@+id/content_view"
-      android:orientation="vertical"
-      android:layout_width="match_parent"
-      android:layout_height="match_parent">
-<LinearLayout
-    android:padding="@dimen/eight_dp"
-    android:layout_marginTop="@dimen/eight_dp"
-    android:gravity="center"
-    android:orientation="horizontal"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    tools:ignore="UselessParent">
-
-    <ImageView
-        android:contentDescription="@string/location"
-        android:src="@drawable/baseline_location_on_24"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-
-    <TextView
-
-        android:textSize="@dimen/font_twenty_sp"
-        android:textStyle="bold"
-        android:id="@+id/location_tv"
-        android:layout_weight="1"
-        android:gravity="center"
-        android:layout_gravity="center"
-        android:textColor="@color/white"
-        android:text="@string/dhaka"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"/>
-
-    <ImageView
-        android:contentDescription="@string/title_notifications"
-        android:src="@drawable/notification_icon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-
-</LinearLayout>
-
-    <ImageView
-        android:id="@+id/weather_update_im"
-        android:layout_gravity="center"
-        android:layout_weight="1"
-        android:contentDescription="@string/weathe_update"
-        android:padding="8dp"
-        android:layout_marginTop="@dimen/therty"
-        android:src="@drawable/smple_icon"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"/>
-
-    <androidx.cardview.widget.CardView
-        android:layout_marginBottom="@dimen/eight_dp"
+    <RelativeLayout
+        android:padding="@dimen/eight_dp"
+        android:layout_margin="@dimen/eight_dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardBackgroundColor="#EEB902"
-        android:elevation="8dp"
-        android:padding="@dimen/eight_dp"
-        app:cardCornerRadius="25dp">
+
+        >
+
+        <ProgressBar
+            android:id="@+id/progressbar_indicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/error_msg_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/http_request_error"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:visibility="gone" />
+
 
         <LinearLayout
-            android:padding="@dimen/eight_dp"
-            android:layout_margin="@dimen/eight_dp"
-            android:gravity="center"
-            android:orientation="vertical"
+            android:id="@+id/content_view"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:textSize="@dimen/font_twenty_sp"
-                android:textColor="@color/white"
-                android:textStyle="bold"
-                android:id="@+id/date_tv"
-                android:text="@string/date"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
-            <TextView
-                android:elevation="@dimen/eight_dp"
-                android:layout_marginTop="@dimen/eight_dp"
-                android:id="@+id/temparature_tv"
-                android:textSize="@dimen/font_sixty_sp"
-                android:textColor="@color/white"
-                android:textStyle="normal"
-                android:text="29\u2103"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-            <TextView
-                android:layout_marginTop="@dimen/eight_dp"
-                android:textSize="@dimen/font_sixteen_sp"
-                android:textColor="@color/white"
-                android:textStyle="bold"
-                android:id="@+id/weather_title_tv"
-                android:text="@string/cloudy"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="gone">
 
             <LinearLayout
-                android:layout_margin="30dp"
-                android:layout_marginTop="@dimen/eight_dp"
- android:padding="@dimen/eight_dp"
-                android:layout_weight="1"
-                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="0dp">
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/eight_dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="@dimen/eight_dp"
+                tools:ignore="UselessParent">
 
-                <LinearLayout
-                    android:gravity="center"
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/location"
+                    android:src="@drawable/baseline_location_on_24" />
+
+                <TextView
+
+                    android:id="@+id/location_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:orientation="horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <ImageView
-                        android:contentDescription="@string/title_notifications"
-                        android:src="@drawable/windy"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
-                    <TextView
-                        android:layout_marginStart="@dimen/font_twenty_sp"
-                        android:textColor="@color/white"
-                        android:textSize="@dimen/font_sixteen_sp"
-                        android:gravity="center_vertical"
-                        android:layout_weight="1"
-                        android:text="@string/wind_string"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"/>
-                      <TextView
-                          android:id="@+id/wind_speed_tv"
-                          android:textColor="@color/white"
-                          android:textSize="@dimen/font_sixteen_sp"
-                        android:text="|  122km/h"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
-
-
-                </LinearLayout>
-
-                <LinearLayout
+                    android:layout_weight="1"
                     android:gravity="center"
-                    android:layout_gravity="center"
-                    android:orientation="horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:text="@string/dhaka"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_twenty_sp"
+                    android:textStyle="bold" />
 
-                    <ImageView
-                        android:contentDescription="@string/title_notifications"
-                        android:src="@drawable/hum"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
-                    <TextView
-                        android:layout_marginStart="@dimen/font_twenty_sp"
-                        android:textColor="@color/white"
-                        android:textSize="@dimen/font_sixteen_sp"
-
-                        android:layout_weight="1"
-                        android:text="@string/hum_string"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"/>
-                    <TextView
-                        android:id="@+id/hum_tv"
-                        android:textColor="@color/white"
-                        android:textSize="@dimen/font_sixteen_sp"
-                        android:text="|  122km/h"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
-
-
-                </LinearLayout>
-
-
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/title_notifications"
+                    android:src="@drawable/notification_icon" />
 
             </LinearLayout>
 
+            <ImageView
+                android:id="@+id/weather_update_im"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/therty"
+                android:layout_weight="1"
+                android:contentDescription="@string/weathe_update"
+                android:padding="8dp"
+                android:src="@drawable/smple_icon" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/eight_dp"
+                android:elevation="8dp"
+                android:padding="@dimen/eight_dp"
+                app:cardBackgroundColor="#EEB902"
+                app:cardCornerRadius="25dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/eight_dp"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="@dimen/eight_dp">
+
+                    <TextView
+                        android:id="@+id/date_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/date"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/font_twenty_sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/temparature_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/eight_dp"
+                        android:elevation="@dimen/eight_dp"
+                        android:text="29"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/font_sixty_sp"
+                        android:textStyle="normal" />
+
+                    <TextView
+                        android:id="@+id/weather_title_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/eight_dp"
+                        android:text="@string/cloudy"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/font_sixteen_sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_margin="30dp"
+                        android:layout_marginTop="@dimen/eight_dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:padding="@dimen/eight_dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:contentDescription="@string/title_notifications"
+                                android:src="@drawable/windy" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/font_twenty_sp"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical"
+                                android:text="@string/wind_string"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/font_sixteen_sp" />
+
+                            <TextView
+                                android:id="@+id/wind_speed_tv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="|122km/h"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/font_sixteen_sp" />
 
 
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:contentDescription="@string/title_notifications"
+                                android:src="@drawable/hum" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/font_twenty_sp"
+
+                                android:layout_weight="1"
+                                android:text="@string/hum_string"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/font_sixteen_sp" />
+
+                            <TextView
+                                android:id="@+id/hum_tv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="| 122km/h"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/font_sixteen_sp" />
+
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
         </LinearLayout>
 
-    </androidx.cardview.widget.CardView>
-  </LinearLayout>
-
-</RelativeLayout>
+    </RelativeLayout>
+</ScrollView>

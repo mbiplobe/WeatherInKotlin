@@ -11,11 +11,9 @@ import androidx.lifecycle.Observer
 import com.mbiplobe.weather.data.Weather
 import com.mbiplobe.weather.databinding.FragmentHomeBinding
 import com.mbiplobe.weather.injects.Injects
-
 import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Locale
-import kotlin.text.*
 
 class HomeFragment : Fragment() {
 
@@ -47,7 +45,9 @@ class HomeFragment : Fragment() {
 
     override fun onDestroyView() {
         super.onDestroyView()
+        Injects.cancel()
         _binding = null
+
     }
 
 
@@ -75,9 +75,9 @@ class HomeFragment : Fragment() {
         val currentDate = dateFormat.format(calendar.time)
 
         binding.dateTv.text = currentDate
-        binding.temparatureTv.text = String.format("0.2d%",weather.temp)
+        binding.temparatureTv.text ="${weather.temp}"
         binding.weatherTitleTv.text = weather.main
-        binding.windSpeedTv.text = String.format("0.2d%",weather.speed)
+        binding.windSpeedTv.text ="${weather.speed}"
         binding.humTv.text = "${weather.humidity}"
     }
 
